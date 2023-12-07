@@ -1,11 +1,9 @@
 <script setup lang="ts">
   import { type Project } from "../models/Project";
   import {Swiper, SwiperSlide} from "swiper/vue";
-  import {Navigation} from "swiper/modules";
-  // Import Swiper styles
+  import {Pagination} from "swiper/modules";
   import 'swiper/css';
-
-  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
 
   const props = defineProps<{
     project:Project
@@ -14,18 +12,26 @@
 </script>
 
 <template>
-  {{props.project.title}}
-  <swiper
-      :navigation="true"
-      :modules="[Navigation]"
-      class="mySwiper"
-  >
+  <div class="grid grid-cols-1 md:grid-cols-2 h-full    " style="background-color: #e3e6ee">
 
-    <swiper-slide v-for="(item,i) in props.project.imagesSrc">
-      <img :src="item"  alt="ggwp" loading="lazy" decoding="async" />
-    </swiper-slide>
 
-  </swiper>
+    <div class=" ">
+          <swiper
+        :pagination="{dynamicBullets: true}"
+        :modules="[Pagination]"
+        class="myProjectSwiper"
+    >
+      <swiper-slide v-for="(item,i) in props.project.imagesSrc">
+        <img :src="item"  alt="ggwp" loading="lazy" decoding="async" />
+      </swiper-slide>
+
+    </swiper>
+    </div>
+    <div class=" ">
+       <h3>{{props.project.title}}</h3>
+      <p>{{props.project.description}}</p>
+    </div>
+  </div>
 </template>
 
 <style scoped>
