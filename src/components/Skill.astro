@@ -1,0 +1,36 @@
+---
+import {TechnicalSkill} from "../models/TechnicalSkill";
+interface Props {
+    skill:TechnicalSkill
+}
+
+const skillProps = Astro.props
+const skill:TechnicalSkill = skillProps.skill
+
+---
+
+<div>
+    <h5 class="mb-3">{skill.name}</h5>
+    { skill.info && <span class="mb-3">{skill.info}</span> }
+    <div class="flex flex-col">
+        {
+            skill.options.map(opt => {
+                return (
+                        <div class="flex gap-1 items-center">
+                            <div class="rectangle"></div>
+                            <span>{opt}</span>
+                        </div>
+                )
+            })
+        }
+    </div>
+
+
+</div>
+<style>
+    .rectangle {
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: var(--gray-400);
+    }
+</style>

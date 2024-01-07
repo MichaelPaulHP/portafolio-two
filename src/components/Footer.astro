@@ -5,11 +5,12 @@ const currentYear = new Date().getFullYear();
 
 <footer>
 	<div class="group">
-		<p>
-			Designed & Developed with <a href="https://astro.build/" style="color: white !important">Astro</a>
-			<Icon icon="rocket-launch" size="1.2em" />
-		</p>
 		<p>&copy; {currentYear} Michael Huahuasoncco</p>
+		<p>
+			 Developed with <a href="https://astro.build/" style="color: white !important">Astro</a>
+
+		</p>
+
 	</div>
 
 </footer>
@@ -18,11 +19,11 @@ const currentYear = new Date().getFullYear();
 		display: flex;
 		flex-direction: column;
 		gap: 3rem;
-		background-color: black;
+		background-color: var(--gray-0);
 		padding: 3rem 2rem 3rem;
 		text-align: center;
-		color: white;
-		font-size: var(--text-sm);
+		color: var(--gray-900);
+		font-size: 0.75rem;
 	}
 
 

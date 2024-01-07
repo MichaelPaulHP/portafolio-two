@@ -30,7 +30,7 @@ export default {
 </script>
 
 <template>
-
+  <h1 class="mb-6">Proyectos</h1>
   <div class="my-container">
     <swiper
         :navigation="true"
@@ -70,9 +70,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-.swiper-slide{
-  background-color: #ca7879;
-}
+
 .swiper-button-next {
   /*position: absolute;
   right: 10px;

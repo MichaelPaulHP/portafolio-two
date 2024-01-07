@@ -1,0 +1,16 @@
+---
+import {technicalSkills} from "../data/technicalSkills";
+import Skill from "./Skill.astro"
+
+const skills = technicalSkills
+---
+
+<div >
+    <h1 class="mb-6" >Habilidades Técnicas</h1>
+    <div class="grid grid-cols-1  md:grid-cols-2 gap-8 ">
+        {
+            skills.map(skill=> ( <Skill skill={skill}  ></Skill>))
+        }
+
+    </div>
+</div>

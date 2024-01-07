@@ -23,7 +23,7 @@
 	--accent-subtle-overlay: var(--accent-overlay);
 	--accent-text-over: var(--gray-0);
 
-	--link-color: var(--accent-regular);
+	--link-color: var(--gray-900);
 
 	/* Gradients */
 	--gradient-stop-1: var(--accent-light);
@@ -71,6 +71,8 @@
 
 	/* Transitions */
 	--theme-transition: 0.2s ease-in-out;
+	--swiper-theme-color: var(--gray-0) !important;
+	--swiper-pagination-bullet-inactive-color: var(--gray-0) !important;
 }
 
 :root.theme-dark {
