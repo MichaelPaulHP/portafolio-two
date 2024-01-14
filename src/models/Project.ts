@@ -4,6 +4,6 @@ export interface Project {
     tools: string[],
     imagesSrc: string[],
     repositories: { name:string,src: string }[],
-    icon: string,
+    icon: string | undefined,
     video?: string | undefined
 }

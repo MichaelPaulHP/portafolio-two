@@ -2,8 +2,108 @@ import type {Project} from "../models/Project.ts";
 
 const pathImage = "/projectImages";
 
-
+// todo: agregar espacion en  descriptions
 export const yourProjectList: Project[] = [
+    {
+        title: 'Modulo de pre-solicitudes',
+        icon: undefined,
+        repositories: [],
+        tools: [
+            'FrontEnd',
+            'Angular v16',
+            'TypeScript "Strict Mode"',
+            'View Models',
+            'Presenter',
+            'La Artesanía del codigo limpio - Robert C. Martin ',
+
+        ],
+        imagesSrc: [],
+        descriptions: [
+            'Aplicacion web  registras pre solicitudes.',
+            'Uso de la herramiendas,'
+
+        ],
+        video: undefined
+    },
+    {
+        title: 'Crédito Vehicular',
+        icon: undefined,
+        repositories: [],
+        tools: [
+            'FrontEnd',
+            'Angular v15',
+            'TypeScript',
+            'View Models',
+            'Presenter',
+            'Arquitectura limpia - Robert C. Martin ',
+            'Branching strategy',
+
+        ],
+        imagesSrc: [],
+        descriptions: [
+            'Aplicacion web  para otorgar creditos Vehicular, consta de varias etapas con varias simulaciones',
+            'Reto 1: fue tener las simulaciones de cada etapa, ir a cualquier etapa, ver simulacion previa y ver la ultima simulacion',
+            'Reto 2: iniciar el estado de la pagina con data guardada, aqui uno de mis grander errores.',
+            'Puse en practica lo que lei en "Arquitectura limpia ", representar la UI como un tipo de dato(View Model) y el Presenter se encarga de crear estos view models. entonces cada pagina estaba acompanado de un presenter.',
+            'Cambiamos nuestro Branching strategy por cambio de flujo de trabajo de desarrollo.',
+            'Me di cuenta que la mejor manera de representar incertidumbre de algo, es definirlo como T |  null | undefined.',
+
+
+        ],
+        video: undefined
+    },
+    {
+        title: 'OB SAAS',
+        icon: undefined,
+        repositories: [],
+        tools: [
+            'FrontEnd',
+            'Angular v14',
+            'i18n',
+            'Multiples Estilos',
+            'POO',
+            'JIRA',
+            'Una rama por issue/feature',
+            'Branching strategy',
+            'TS - Null safety '
+        ],
+        imagesSrc: [],
+        descriptions: [
+            'Aplicacion web con modulos para otorgar creditos, cobranza, programa de d para otorgar créditos,',
+
+            'Se requerían funcionalidades como soporte para varios idiomas y fácil cambio de estilo de la interfaz de usuario (UI). Para ello, aprendí el uso de variables en SCSS',
+            'Organizamos las ramas para cumplir con el criterio de que, para una fecha determinada, solo se entreguen las funcionalidades o issues aprobados.',
+            'Aprendimos a usar Jira',
+            'Aprendí mas cosas de TS, null safety, Nullish coalescing, null o undefined como tipos, etc.',
+
+        ],
+        video: undefined
+    },
+    {
+        title: 'Primer Proyecto con Angular',
+        icon: undefined,
+        repositories: [],
+        tools: [
+            'FrontEnd',
+            'Angular v8',
+            'Angular Forms',
+            'Custom Validations',
+            'POO',
+            'Bootstrap Grid',
+            'Definir los responses como tipos de datos'
+        ],
+        imagesSrc: [],
+        descriptions: [
+            'Es un sistema para otorgar créditos de varios productos, desde casas rodantes hasta financiamiento para estudios universitarios. Se desarrolla a través de etapas definidas, comenzando con la recopilación de datos del cliente, seguido de una simulación de crédito y culminando con la documentación requerida.',
+            'Incorporé validaciones personalizadas, divididas en dos componentes clave para la y legibilidad y reusabilidad del código. Primero, una función dedicada exclusivamente a la validación. Segundo, la función ValidatorFn, que utiliza esta función pura y genera mensajes de error específicos para entradas inválidas. Un ejemplo es new FormControl(null, [Validators.isRUT]), donde isRUT es un ValidatorFn utilizada para validar RUTs. todo esto facilita su mantenimiento y testing',
+            'Generación de documentos PDF, herencia para asegurar un formato consistente en todos los documentos, Establecí una clase base que define el estilo y estructura común. Además, separé efectivamente la vista de los datos',
+            'Pagina de resultado: varios motivos para estar aprobado o rechazado, ver Diagrama de clases, por ejemplo los documentos de un Result dependen de muchas cosas.',
+            'Documentos: con posibilidad de subir, actualizar, eliminar, ver incidencias, firmar digitalmente, ver estado de la firma. tambien use POO, ver imagen',
+            'Retoma, posibidad de ir a la ultima etapa completada.'
+        ],
+        video: undefined
+    },
+
     {
         title: "Escuchando Spotity",
         descriptions: ["Esta aplicación escucha la canción que escuchas en tu Spotify y te da la opción de buscar esa canción en YouTube. También tiene historial.", "Una App con kotlin haciendo uso de MVVM, LiveData, Room de Jetpack y por último Kotlin coroutines con retrofit y Room"],
@@ -91,7 +191,7 @@ export const yourProjectList: Project[] = [
     },
     {
         title: "Encrypt-Criptografía asimétrica",
-        descriptions: ["Lo más importante fue sockets, fue mi primera vez que he utilizado sockets en este caso he utilizado la libreria SocketIO."," Es donde aprendí la existencia del UIThread porque algunas cosas se tienen que correr en el hilo de la interfaz de usuario si estas en otro thread que desea cambia la UI, las dificultades en probar la interacción entre un emisor y receptor(reconoce al otro usuario, llega un mensaje, envía un mensaje,etc)"],
+        descriptions: ["Lo más importante fue sockets, fue mi primera vez que he utilizado sockets en este caso he utilizado la libreria SocketIO.", " Es donde aprendí la existencia del UIThread porque algunas cosas se tienen que correr en el hilo de la interfaz de usuario si estas en otro thread que desea cambia la UI, las dificultades en probar la interacción entre un emisor y receptor(reconoce al otro usuario, llega un mensaje, envía un mensaje,etc)"],
         tools: ["Java", "Android", "SocketIO", "Sockets", "NodeJS"],
         imagesSrc: [
             pathImage + "/encrypt/encrypt_main.jpg",
