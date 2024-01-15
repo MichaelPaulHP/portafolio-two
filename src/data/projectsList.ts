@@ -2,7 +2,7 @@ import type {Project} from "../models/Project.ts";
 
 const pathImage = "/projectImages";
 
-// todo: agregar espacion en  descriptions
+
 export const yourProjectList: Project[] = [
     {
         title: 'Modulo de pre-solicitudes',
@@ -14,13 +14,17 @@ export const yourProjectList: Project[] = [
             'TypeScript "Strict Mode"',
             'View Models',
             'Presenter',
-            'La Artesanía del codigo limpio - Robert C. Martin ',
-
+            'La Artesanía del código limpio - Robert C. Martin ',
+            'Husky',
+            'Eslint',
+            'Prettier',
+            'Git hooks',
         ],
         imagesSrc: [],
         descriptions: [
-            'Aplicacion web  registras pre solicitudes.',
-            'Uso de la herramiendas,'
+            'Aplicación web web  registras pre solicitudes.',
+            'Utilicé herramientas avanzadas para la convención de commits y el formateo de código, contribuyendo a nuestra disciplina. Lo que resultó en una mejora significativa en la calidad y mantenibilidad del código. Detalles destacados:\n' +
+            'Herramientas Utilizadas: Conventional Commits, Semantic Versioning, Husky, Eslint y Prettier'
 
         ],
         video: undefined
@@ -65,7 +69,9 @@ export const yourProjectList: Project[] = [
             'JIRA',
             'Una rama por issue/feature',
             'Branching strategy',
-            'TS - Null safety '
+            'TS - Null safety ',
+            'Conventional Commits',
+            'Semantic Versioning'
         ],
         imagesSrc: [],
         descriptions: [
