@@ -1,20 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
 
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ContactCTA from '../components/ContactCTA.astro'
-
 import TechnicalSkills  from '../components/TechnicalSkills.astro'
-// Page section components
 import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
 import Intro from "../components/Intro.astro";
 import Projects from "../components/Projects.vue";
-import Counter from "../components/Counter.vue"
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
 ---
 
 <BaseLayout>
@@ -24,10 +17,6 @@ import Counter from "../components/Counter.vue"
 		<Projects client:visible />
 		<TechnicalSkills></TechnicalSkills>
 		<ContactCTA></ContactCTA>
-
-
-
-
 
 	</main>
 </BaseLayout>
