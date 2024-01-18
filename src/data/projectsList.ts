@@ -11,6 +11,7 @@ export const yourProjectList: Project[] = [
         tools: [
             'FrontEnd',
             'Angular v16',
+            'Typed Forms',
             'TypeScript "Strict Mode"',
             'View Models',
             'Presenter',
@@ -19,12 +20,14 @@ export const yourProjectList: Project[] = [
             'Eslint',
             'Prettier',
             'Git hooks',
+            'En Bpeople-Bantotal'
         ],
         imagesSrc: [],
         descriptions: [
             'Aplicación web web  registras pre solicitudes.',
             'Utilicé herramientas avanzadas para la convención de commits y el formateo de código, contribuyendo a nuestra disciplina. Lo que resultó en una mejora significativa en la calidad y mantenibilidad del código. Detalles destacados:\n' +
-            'Herramientas Utilizadas: Conventional Commits, Semantic Versioning, Husky, Eslint y Prettier'
+            'Herramientas Utilizadas: Conventional Commits, Semantic Versioning, Husky, Eslint y Prettier',
+            'Al iniciar el proyecto, me propuse tipificar exhaustivamente todos los componentes, abarcando desde nuestras fuentes de datos hasta la interfaz de usuario'
 
         ],
         video: undefined
@@ -41,18 +44,16 @@ export const yourProjectList: Project[] = [
             'Presenter',
             'Arquitectura limpia - Robert C. Martin ',
             'Branching strategy',
-
+            'En Bpeople-Bantotal'
         ],
         imagesSrc: [],
         descriptions: [
-            'Aplicacion web  para otorgar creditos Vehicular, consta de varias etapas con varias simulaciones',
-            'Reto 1: fue tener las simulaciones de cada etapa, ir a cualquier etapa, ver simulacion previa y ver la ultima simulacion',
-            'Reto 2: iniciar el estado de la pagina con data guardada, aqui uno de mis grander errores.',
-            'Puse en practica lo que lei en "Arquitectura limpia ", representar la UI como un tipo de dato(View Model) y el Presenter se encarga de crear estos view models. entonces cada pagina estaba acompanado de un presenter.',
-            'Cambiamos nuestro Branching strategy por cambio de flujo de trabajo de desarrollo.',
+            'Aplicación web  para otorgar créditos vehiculares, consta de varias etapas, con varias simulaciones',
+            'Reto 1: permite a los usuarios navegar libremente entre las etapas, asegurándose de que, al cambiar a una etapa específica, se tome la simulación más reciente correspondiente a esa etapa.',
+            'Reto 2: Cuando un usuario regresa a una etapa anterior, la página se debe mostrar tal como se dejó, con todos los datos e interacciones previas intactos. Aquí uno de mis mayores errores.',
+            'Aplicando los conceptos aprendidos en \'Arquitectura Limpia\', implementé la UI mediante el uso de modelos de vista (View Model) y asigné la responsabilidad de crear estos modelos al Presenter. De esta manera, cada página fue diseñada con un Presenter asociado, asegurando una estructura clara y una separación efectiva de responsabilidades.',
+            'Actualizamos nuestra estrategia de ramificación para mejorar la eficiencia del desarrollo y asegurar el cumplimiento de los plazos de entrega del cliente.',
             'Me di cuenta que la mejor manera de representar incertidumbre de algo, es definirlo como T |  null | undefined.',
-
-
         ],
         video: undefined
     },
@@ -71,16 +72,17 @@ export const yourProjectList: Project[] = [
             'Branching strategy',
             'TS - Null safety ',
             'Conventional Commits',
-            'Semantic Versioning'
+            'Semantic Versioning',
+            'En Bpeople-Bantotal'
         ],
         imagesSrc: [],
         descriptions: [
-            'Aplicacion web con modulos para otorgar creditos, cobranza, programa de d para otorgar créditos,',
+            'Aplicación web integrada con módulos de venta y posventa.',
 
-            'Se requerían funcionalidades como soporte para varios idiomas y fácil cambio de estilo de la interfaz de usuario (UI). Para ello, aprendí el uso de variables en SCSS',
-            'Organizamos las ramas para cumplir con el criterio de que, para una fecha determinada, solo se entreguen las funcionalidades o issues aprobados.',
+            'Implementé funcionalidades de soporte multilingüe y personalización flexible de la UI, utilizando variables en SCSS.',
+            'Reestructuramos las ramas para asegurar que solo las funcionalidades o issues aprobados se entreguen para las fechas establecidas.',
             'Aprendimos a usar Jira',
-            'Aprendí mas cosas de TS, null safety, Nullish coalescing, null o undefined como tipos, etc.',
+            'Amplié mis conocimientos en TypeScript, centrándome en características avanzadas como la seguridad de tipo nulo (null safety), Nullish coalescing, y el uso de \'null\' o \'undefined\' como tipos específicos. permitiendome identificar y corregir proactivamente posibles errores en el código',
 
         ],
         video: undefined
@@ -96,7 +98,8 @@ export const yourProjectList: Project[] = [
             'Custom Validations',
             'POO',
             'Bootstrap Grid',
-            'Definir los responses como tipos de datos'
+            'Definir los responses como tipos de datos',
+            'En Bpeople-Bantotal'
         ],
         imagesSrc: [],
         descriptions: [
@@ -112,7 +115,10 @@ export const yourProjectList: Project[] = [
 
     {
         title: "Escuchando Spotity",
-        descriptions: ["Esta aplicación escucha la canción que escuchas en tu Spotify y te da la opción de buscar esa canción en YouTube. También tiene historial.", "Una App con kotlin haciendo uso de MVVM, LiveData, Room de Jetpack y por último Kotlin coroutines con retrofit y Room"],
+        descriptions: [
+            "Esta aplicación escucha la canción que escuchas en tu Spotify y te da la opción de buscar esa canción en YouTube.",
+            "Guardamos metadatos de las canciones buscadas en YouTube, conservando estos datos directamente en el dispositivo del cliente para un acceso rápido.",
+            "Una App con kotlin haciendo uso de MVVM, LiveData, Room de Jetpack y por último Kotlin coroutines con retrofit y Room"],
         tools: ["Android", "Kotlin", "MVVM", "LiveData", "MutableLiveData", "Room", "Jetpack", "Kotlin coroutines"],
         imagesSrc: [
             pathImage + "/list/1listeningspotify.jpg",
@@ -138,7 +144,10 @@ export const yourProjectList: Project[] = [
     },
     {
         title: "Spotify y YouTube",
-        descriptions: ["Este fue mi primera aplicación con Flutter para móvil, he quedado flipando con BloC(Business Logic Components.) porque todo a partir de eventos he logrado manejar la UI según los estados que emiten cada evento. Esta es una aplicación que te permite buscar o ver video de YouTube a partir de una canción que tienes en Spotify.", " Para ello he utilizado la API de Spotify y YouTube para obtener las playlists y buscar en YouTube respectivamente."],
+        descriptions: [
+            "Esta es una aplicación que te permite buscar o ver video de YouTube a partir de una canción que tienes en Spotify.",
+            "Este fue mi primera aplicación con Flutter para móvil, he quedado flipando con BloC(Business Logic Components.) porque todo a partir de eventos he logrado manejar la UI según los estados que emiten cada evento.",
+            "He utilizado la API de Spotify y YouTube para obtener las playlists y buscar en YouTube respectivamente."],
         tools: ["Flutter", "Mobile", "BLoC", "Spotify API", "Spotify Authorization", "YouTube Data API", "Firebase AUTH", "Firebase Cloud Firestore"],
         imagesSrc: [
             pathImage + "/sy/1s_and_y.jpg",
