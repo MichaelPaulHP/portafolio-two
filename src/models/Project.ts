@@ -5,5 +5,6 @@ export interface Project {
     imagesSrc: string[],
     repositories: { name:string,src: string }[],
     icon: string | undefined,
-    video?: string | undefined
+    video?: string | undefined,
+    infoOnTooltip: string | undefined,
 }

@@ -22,7 +22,13 @@ export const yourProjectList: Project[] = [
             'Git hooks',
             'En Bpeople-Bantotal'
         ],
-        imagesSrc: [],
+        imagesSrc: [
+            pathImage + "/s/s10.png",
+            pathImage + "/s/s20.png",
+            pathImage + "/s/s30.png",
+            pathImage + "/s/s40.png",
+            pathImage + "/s/s50.png",
+        ],
         descriptions: [
             'Aplicación web web  registras pre solicitudes.',
             'Utilicé herramientas avanzadas para la convención de commits y el formateo de código, contribuyendo a nuestra disciplina. Lo que resultó en una mejora significativa en la calidad y mantenibilidad del código. Detalles destacados:\n' +
@@ -30,7 +36,8 @@ export const yourProjectList: Project[] = [
             'Al iniciar el proyecto, me propuse tipificar exhaustivamente todos los componentes, abarcando desde nuestras fuentes de datos hasta la interfaz de usuario'
 
         ],
-        video: undefined
+        video: undefined,
+        infoOnTooltip:'Proyecto desarrollado en Bantotal, con una interfaz diseñada por el equipo de diseño de la empresa.'
     },
     {
         title: 'Crédito Vehicular',
@@ -46,7 +53,12 @@ export const yourProjectList: Project[] = [
             'Branching strategy',
             'En Bpeople-Bantotal'
         ],
-        imagesSrc: [],
+        imagesSrc: [
+            pathImage + "/ma/m10.png",
+            pathImage + "/ma/m20.png",
+            pathImage + "/ma/m30.png",
+            pathImage + "/ma/m40.png",
+        ],
         descriptions: [
             'Aplicación web  para otorgar créditos vehiculares, consta de varias etapas, con varias simulaciones',
             'Reto 1: permite a los usuarios navegar libremente entre las etapas, asegurándose de que, al cambiar a una etapa específica, se tome la simulación más reciente correspondiente a esa etapa.',
@@ -55,7 +67,8 @@ export const yourProjectList: Project[] = [
             'Actualizamos nuestra estrategia de ramificación para mejorar la eficiencia del desarrollo y asegurar el cumplimiento de los plazos de entrega del cliente.',
             'Me di cuenta que la mejor manera de representar incertidumbre de algo, es definirlo como T |  null | undefined.',
         ],
-        video: undefined
+        video: undefined,
+        infoOnTooltip:'Proyecto desarrollado en Bantotal, con una interfaz diseñada por el equipo de diseño de la empresa.'
     },
     {
         title: 'OB SAAS',
@@ -75,7 +88,11 @@ export const yourProjectList: Project[] = [
             'Semantic Versioning',
             'En Bpeople-Bantotal'
         ],
-        imagesSrc: [],
+        imagesSrc: [
+            pathImage + "/qtc/q10.png",
+            pathImage + "/qtc/q20.png",
+            pathImage + "/qtc/q30.png",
+        ],
         descriptions: [
             'Aplicación web integrada con módulos de venta y posventa.',
 
@@ -85,7 +102,8 @@ export const yourProjectList: Project[] = [
             'Amplié mis conocimientos en TypeScript, centrándome en características avanzadas como la seguridad de tipo nulo (null safety), Nullish coalescing, y el uso de \'null\' o \'undefined\' como tipos específicos. permitiendome identificar y corregir proactivamente posibles errores en el código',
 
         ],
-        video: undefined
+        video: undefined,
+        infoOnTooltip:'Proyecto desarrollado en Bantotal, con una interfaz diseñada por el equipo de diseño de la empresa.'
     },
     {
         title: 'Primer Proyecto con Angular',
@@ -101,7 +119,15 @@ export const yourProjectList: Project[] = [
             'Definir los responses como tipos de datos',
             'En Bpeople-Bantotal'
         ],
-        imagesSrc: [],
+        imagesSrc: [
+            pathImage + "/f/f10.png",
+            pathImage + "/f/f20.png",
+            pathImage + "/f/f30.png",
+            pathImage + "/f/f40.png",
+            pathImage + "/f/f50.png",
+            pathImage + "/f/f60.png",
+            pathImage + "/f/f70.png",
+        ],
         descriptions: [
             'Es un sistema para otorgar créditos de varios productos, desde casas rodantes hasta financiamiento para estudios universitarios. Se desarrolla a través de etapas definidas, comenzando con la recopilación de datos del cliente, seguido de una simulación de crédito y culminando con la documentación requerida.',
             'Incorporé validaciones personalizadas, divididas en dos componentes clave para la y legibilidad y reusabilidad del código. Primero, una función dedicada exclusivamente a la validación. Segundo, la función ValidatorFn, que utiliza esta función pura y genera mensajes de error específicos para entradas inválidas. Un ejemplo es new FormControl(null, [Validators.isRUT]), donde isRUT es un ValidatorFn utilizada para validar RUTs. todo esto facilita su mantenimiento y testing',
@@ -110,7 +136,8 @@ export const yourProjectList: Project[] = [
             'Documentos: con posibilidad de subir, actualizar, eliminar, ver incidencias, firmar digitalmente, ver estado de la firma. tambien use POO, ver imagen',
             'Retoma, posibidad de ir a la ultima etapa completada.'
         ],
-        video: undefined
+        video: undefined,
+        infoOnTooltip:'Proyecto desarrollado en Bantotal, con una interfaz diseñada por el equipo de diseño de la empresa.'
     },
 
     {
@@ -131,7 +158,8 @@ export const yourProjectList: Project[] = [
             {name: "BackEnd", src: "https://github.com/MichaelPaulHP/"}
         ],
         icon: pathImage + "/list/icon.png",
-        video: pathImage + "/list/video.mp4"
+        video: pathImage + "/list/video.mp4",
+        infoOnTooltip: undefined
     },
     {
         title: "Resolver Sudoku",
@@ -141,6 +169,7 @@ export const yourProjectList: Project[] = [
         repositories: [],
         icon: pathImage + "/sudoku/icon.png",
         video: pathImage + "/sudoku/video.mp4",
+        infoOnTooltip: undefined
     },
     {
         title: "Spotify y YouTube",
@@ -161,7 +190,8 @@ export const yourProjectList: Project[] = [
             {name: "BackEnd", src: "https://github.com/MichaelPaulHP/"}
         ],
         icon: pathImage + "/sy/icon.png",
-        video: pathImage + "/sy/video.mp4"
+        video: pathImage + "/sy/video.mp4",
+        infoOnTooltip: undefined
     },
     {
         title: "Concurrencia",
@@ -180,7 +210,8 @@ export const yourProjectList: Project[] = [
             {name: "App Mobil", src: "https://github.com/MichaelPaulHP/Concurrent"},
             {name: "BackEnd", src: "https://github.com/MichaelPaulHP/concurrentServe"}
         ],
-        icon: pathImage + "/c/icon.png"
+        icon: pathImage + "/c/icon.png",
+        infoOnTooltip: undefined
     },
     {
         title: "Home",
@@ -202,7 +233,8 @@ export const yourProjectList: Project[] = [
             {name: "App Mobil", src: "https://github.com/MichaelPaulHP/IHome"},
             {name: "Raspberry PI", src: "https://github.com/MichaelPaulHP/ihomeServe"}
         ],
-        icon: pathImage + "/icon.png"
+        icon: pathImage + "/icon.png",
+        infoOnTooltip: undefined
     },
     {
         title: "Encrypt-Criptografía asimétrica",
@@ -218,7 +250,8 @@ export const yourProjectList: Project[] = [
             {name: "App Mobil", src: "https://github.com/MichaelPaulHP/Encrypt"},
             {name: "BackEnd", src: "https://github.com/MichaelPaulHP/Encrypt"}
         ],
-        icon: pathImage + "/mobil.png"
+        icon: pathImage + "/mobil.png",
+        infoOnTooltip: undefined
     },
     {
         title: "Sistema de Invetario",
@@ -234,7 +267,8 @@ export const yourProjectList: Project[] = [
         repositories: [
             {name: "Repositorio", src: "https://github.com/DeyvyMY/SICPAV2"},
         ],
-        icon: pathImage + "/web.png"
+        icon: pathImage + "/web.png",
+        infoOnTooltip: undefined
     },
     {
         title: "Portafolio V1",
@@ -248,7 +282,8 @@ export const yourProjectList: Project[] = [
         repositories: [
             {name: "Repositorio", src: "https://github.com"},
         ],
-        icon: pathImage + "/portafolio/icon.png"
+        icon: pathImage + "/portafolio/icon.png",
+        infoOnTooltip: undefined
     },
 ];
 

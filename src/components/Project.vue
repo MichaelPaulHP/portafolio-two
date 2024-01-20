@@ -4,6 +4,7 @@ import {Swiper, SwiperSlide} from "swiper/vue";
 import {Pagination} from "swiper/modules";
 import 'swiper/css';
 import 'swiper/css/pagination';
+import InfoTooltip from "./InfoTooltip.vue";
 
 const props = defineProps<{
   project: Project
@@ -42,7 +43,16 @@ const props = defineProps<{
       </swiper>
     </div>
     <div class="pt-12 pb-8 md:py-8 px-8 md:overflow-auto h-[50dvh] md:h-[100dvh]">
-      <h3 class="mb-5">{{ props.project.title }}</h3>
+      <div class="relative mb-5">
+        <h3 >{{ props.project.title }}
+        </h3>
+        <div v-if="props.project.infoOnTooltip" class="absolute top-0 right-0 text-xs"  >
+           <InfoTooltip  :message="props.project.infoOnTooltip" ></InfoTooltip>
+        </div>
+
+
+
+      </div>
       <p v-for="(desc ) in props.project.descriptions" class="mb-1" >{{ desc }}</p>
       <div class="flex flex-wrap gap-4 mt-8">
         <span v-for="(tag,i) in props.project.tools" class="tag">{{tag}}</span>
