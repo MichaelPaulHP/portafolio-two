@@ -7,17 +7,20 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
 import Intro from "../components/Intro.astro";
 import Projects from "../components/Projects.vue";
+import ChatButton from "../components/ChatButton.astro";
+
 
 ---
 
 <BaseLayout>
 	<main class="flex flex-col gap-8 ">
 		<Intro></Intro>
+
 		<Skills />
 		<Projects client:visible />
 		<TechnicalSkills></TechnicalSkills>
 		<ContactCTA></ContactCTA>
-
+		<ChatButton></ChatButton>
 	</main>
 </BaseLayout>
 
