@@ -26,11 +26,13 @@ const props = defineProps<{
           }"
       >
 
-        <swiper-slide v-for="(item,i) in props.project.imagesSrc"  >
-          <div class="flex items-center justify-center mb-10 md:py-8 h-[50dvh] md:h-[90dvh]" >
-            <img class="mx-auto" style="max-height: 100%"  :src="item" alt="ggwp" loading="lazy" decoding="async"/>
-          </div>
-        </swiper-slide>
+          <swiper-slide  v-for="(item,i) in props.project.imagesSrc"  >
+            <div class="flex items-center justify-center mb-10 md:py-8 h-[50dvh] md:h-[90dvh]" >
+              <img class="mx-auto" style="max-height: 100%"  :src="item" :alt="props.project.title" loading="lazy" decoding="async"/>
+            </div>
+          </swiper-slide>
+
+
         <swiper-slide v-if="props.project.video"    >
           <div class="flex items-center justify-center md:py-8 h-[50dvh] md:h-[90dvh]">
             <video style="height: 100% !important;" width="auto" controls>

@@ -5,6 +5,56 @@ const pathImage = "/projectImages";
 
 export const yourProjectList: Project[] = [
     {
+        title:'RAG Application',
+        tools: [
+            'Langchain',
+            'OpenAI API',
+            'OpenAI: LLM models',
+            'OpenAI: Embeddings models',
+            'MongoDB Atlas: VectorDB',
+            'Google Cloud Platform: Cloud run',
+            'Serverless',
+            'FastAPI',
+            'Google Colab'
+        ],
+        repositories:[ ],
+        descriptions:[
+            'Tenía que hacer algo con AI, coincidí con RAG( Retrieval-augmented generation) y Langchain.',
+            'Para poner en practica lo que investigue,  he decidió  hacer un ChatBot para mi portafolio.',
+            'He decido dar información que hay en mi portafolio como contexto a un modelo LLM.',
+            'He desarrollado un API con FastAPI  que utiliza el model “text-embedding-3-small” para ir a buscar vectores que    están  relacionados con la pregunta del usuario, para  que luego  este sirva   como  contexto  al modelo GPT-3.5 Turbo y este responder a la pregunta.',
+            'Para la generación de los vectores,  la fuente de datos es mi CV y información que hay en mi portafolio. Langchain me ayudo para hacer el   chunking/splitting,  “text-embedding-3-small” para generar los vectores y  finalmente guarda estos en el VectorDB de MongoDB Atlas.',
+            'Para UI, decidí agregar un chat en mi portafolio, ya lo deberías de hacer visto.',
+            'La API esta deployado en Cloud Run.',
+            'La imagen es de un curso de MongoDB Atlas.'
+        ],
+        imagesSrc:[pathImage + "/rag/image3.png"],
+        icon: undefined,
+        infoOnTooltip: undefined,
+    },
+    {
+      title:'this',
+      tools:[
+          'Astro',
+          'Vue 3',
+          'Vercel static web hosting',
+          'Vercel analytics',
+      ],
+        repositories:[{
+          name:'GitHub',
+           src:'https://github.com/MichaelPaulHP/portafolio-two'
+        }],
+        descriptions:[
+            'He desarrollado una aplicación web para exponer mis datos personales, información profesional y proyectos',
+            'El objetivo es aprender Astro y construir una marca personal.',
+            'Elegí Astro para optimizar la velocidad de carga y mejorar la visibilidad en los motores de búsqueda.',
+            'Aproveche las herramientas de Vercel, como el hosting para sitios web estáticos y análisis de datos'
+        ],
+        imagesSrc:[ ],
+        icon: undefined,
+        infoOnTooltip: undefined,
+    },
+    {
         title: 'Modulo de pre-solicitudes',
         icon: undefined,
         repositories: [],
