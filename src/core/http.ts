@@ -19,4 +19,16 @@ export abstract class Http{
 
         return res.json();
     }
+
+
+    static async get(endpoint: Endpoint) {
+        const url = `${Http.URL_BASE}${endpoint}`
+        const res = await fetch(url)
+
+        if (!res.ok) {
+            throw new Error(`Error in the request: ${res.statusText}`);
+        }
+
+        return res.json();
+    }
 }

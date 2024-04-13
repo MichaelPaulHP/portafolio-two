@@ -1,13 +1,20 @@
 <script setup lang="ts">
 
 import {reactive, ref} from "vue";
-import {Chat} from "../models/Chat.ts";
+import {Chat, type ChatActions, type Message} from "../models/Chat.ts";
+import {sleep} from "../utils/fns.ts";
 
+const obs:ChatActions = {
+  onNewMessage:(message:Message)=>{
+    scrollToBot()
+  }
+}
 const chat = reactive<Chat>(new Chat())
+chat.setListener(obs)
 const msg = ref('')
 const isMessagesVisible = ref(false)
 const onEnter = () => {
-  scrollToBot()
+
   const text = msg.value
   if (!text || !text.length || text.length > 70) {
     return
@@ -18,12 +25,13 @@ const onEnter = () => {
   }
   chat.send(msg.value).then(value => {
     msg.value = ''
-    scrollToBot()
+
   })
   isMessagesVisible.value = true
 }
 
-const scrollToBot = () => {
+const scrollToBot = async  () => {
+  await sleep(200)
   document.querySelector('#last')?.scrollIntoView({
     behavior: 'smooth'
   });
