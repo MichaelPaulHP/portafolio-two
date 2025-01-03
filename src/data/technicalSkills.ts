@@ -7,9 +7,17 @@ export const technicalSkills: ReadonlyArray<TechnicalSkill> = [
         options: [
             'TypeScript',
             'Javascript',
+            'Python',
             'Kotlin',
             'Java',
         ]
+    },
+    {
+        name: 'AI',
+        info: 'Aprendiendo',
+        options:[
+            'Langgraph',
+        ],
     },
     {
         name: 'Frameworks y Bibliotecas',

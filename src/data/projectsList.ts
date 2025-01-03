@@ -3,7 +3,29 @@ import type {Project} from "../models/Project.ts";
 const pathImage = "/projectImages";
 
 
-export const yourProjectList: Project[] = [
+export const yourProjectList: Project[] = [    {
+    title:'Automatización usando CI/CD GitLab',
+    tools: [
+        'CI/CD',
+        'GitLab',
+        'Runner',
+        'Pipeline',
+        'Shell',
+        'Microsoft Power Automate',
+        'Microsoft Teams',
+        'Jira Automation',
+        'Jira version',
+    ],
+    repositories:[ ],
+    descriptions:[
+        'Estoy en esto. Te invito a explorar revisa mis otros proyectos',
+        '',
+        ''
+    ],
+    imagesSrc:[],
+    icon: undefined,
+    infoOnTooltip: 'Proyecto desarrollado en Bantotal Bpeople.',
+    },
     {
         title:'RAG Application',
         tools: [

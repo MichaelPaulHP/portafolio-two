@@ -77,6 +77,7 @@ export default {
   top: 50%;
   transform: translateY(-50%);*/
   color: var(--gray-0);
+  width: 30px;
 }
 
 .swiper-button-prev {
