@@ -55,7 +55,7 @@ const props = defineProps<{
 
 
       </div>
-      <p v-for="(desc ) in props.project.descriptions" class="mb-1" >{{ desc }}</p>
+      <p v-for="(desc ) in props.project.descriptions" class="mb-1" v-html="desc" > </p>
       <div class="flex flex-wrap gap-4 mt-8">
         <span v-for="(tag,i) in props.project.tools" class="tag">{{tag}}</span>
       </div>

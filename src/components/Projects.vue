@@ -30,7 +30,12 @@ export default {
 </script>
 
 <template>
-  <h1 class="mb-6">Proyectos</h1>
+
+  <div>
+    <h1 class=" ">Proyectos</h1>
+    <h5 class=" ">Ordenados cronológicamente, primero los más recientes.</h5>
+  </div>
+
   <div class="my-container">
     <swiper
         :navigation="true"

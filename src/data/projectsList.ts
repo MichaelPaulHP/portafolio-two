@@ -4,7 +4,7 @@ const pathImage = "/projectImages";
 
 
 export const yourProjectList: Project[] = [    {
-    title:'Automatización usando CI/CD GitLab',
+    title:'Automatización CI/CD GitLab',
     tools: [
         'CI/CD',
         'GitLab',
@@ -16,13 +16,16 @@ export const yourProjectList: Project[] = [    {
         'Jira Automation',
         'Jira version',
     ],
-    repositories:[ ],
-    descriptions:[
-        'Estoy en esto. Te invito a explorar revisa mis otros proyectos',
-        '',
-        ''
+    repositories: [ ],
+    descriptions: [
+        'En nuestro trabajo diario con Teams, GitLab y Jira, teníamos que actualizar issues y notificar al equipo sobre nuevas versiones manualmente. La naturaleza repetitiva de estas tareas me motivó a crear esta automatización.',
+        'El proyecto se compone de tres elementos principales:',
+        '<b>1. GitLab Runner:</b> Desarrollé scripts reutilizables que funcionan como comandos, permitiendo que cualquier proyecto del grupo los pueda usar fácilmente en sus pipelines.',
+        `<b>2. Automatizaciones de Jira:</b> A partir de webhooks que automáticamente modifican tickets y crean versiones según las acciones realizadas.`,
+        '<b>3. Microsoft Power Automate:</b> Configuré webhooks que envían mensajes automáticamente a los chats correspondientes del equipo.',
+        'Este proyecto logró mejorar significativamente la productividad del equipo y eliminando tareas manuales repetitivas.'
     ],
-    imagesSrc:[],
+    imagesSrc:[pathImage + "/noimage.png"],
     icon: undefined,
     infoOnTooltip: 'Proyecto desarrollado en Bantotal Bpeople.',
     },
