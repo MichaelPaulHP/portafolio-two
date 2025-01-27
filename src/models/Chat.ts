@@ -1,17 +1,20 @@
 import {Http} from "../core/http";
 import {APIS} from "../constans/endpoints";
 import {sleep} from "../utils/fns.ts";
+import {ref, type Ref} from "vue";
 
 export type Message = {
     author: 'Michael bot' | 'You',
     AuthorImage: '🤖' | '👨‍💻',
-    text: string,
+    text: Ref<string>,
     type: 'Success' | 'Error' | undefined,
     status: '🚀' | '🖥️💥' | '✅' | undefined
 }
-export interface ChatActions{
+
+export interface ChatActions {
     onNewMessage: (message: Message) => void;
 }
+
 export class Chat {
 
     messages: Message[]
@@ -21,26 +24,63 @@ export class Chat {
     constructor() {
         this.messages = []
     }
-    setListener(sub:ChatActions){
-       this.listener = sub
+
+    setListener(sub: ChatActions) {
+        this.listener = sub
     }
 
     async send(text: string) {
         if (!this.instance) {
-            await this.initInstance()
+            this.pushMessage(this.buildBotMessage('Iniciando...⏳'));
+            const initSuccess = await this.initInstance()
+            if (!initSuccess) {
+                this.pushMessage(this.getErrorMessage());
+                return;
+            }
         }
         const currentMessage: Message = {
             author: 'You',
             AuthorImage: '👨‍💻',
-            text,
+            text: ref(text),
             type: undefined,
             status: '🚀'
         }
         this.pushMessage(currentMessage)
 
-        const messageRes = await this.sendMessage(text);
+
+        const params = {query: text, chat: this.instance}
+        const startText = '...'
+        const nextMessage = this.buildBotMessage(startText)
+        const p = new Promise(async (resolve,reject) => {
+            try {
+                const generator = Http.stream(APIS.QA_STREAM, params)
+
+
+                this.pushMessage(nextMessage);
+                // nextMessage.text.value = ''
+                for await (const data of generator) {
+                    //console.log(data)
+                    if (data.answer) {
+                        const current = nextMessage.text.value
+                        nextMessage.text.value = current === startText ? data.answer : (current + data.answer);
+                    }
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+                }
+                resolve(undefined)
+            }catch (e) {
+                reject(e)
+            }
+
+        })
+
+        //const messageRes = await this.sendMessage(text);
         currentMessage.status = '✅'
-        this.pushMessage(messageRes);
+        await p.catch((err) => {
+            nextMessage.text.value = this.getErrorMessage().status ?? '';
+        })
+        //this.pushMessage(nextMessage);
     }
 
     lastMessage(): Message | undefined {
@@ -52,7 +92,7 @@ export class Chat {
         return {
             author: 'Michael bot',
             AuthorImage: '🤖',
-            text: '...',
+            text: ref('...'),
             type: 'Error',
             status: '🖥️💥'
         }
@@ -61,13 +101,13 @@ export class Chat {
 
 
     private async sendMessage(text: string): Promise<Message> {
-        const params = {query: text,chat: this.instance}
+        const params = {query: text, chat: this.instance}
         try {
             const res: string = await Http.post(APIS.QA, params)
             return {
                 author: 'Michael bot',
                 AuthorImage: '🤖',
-                text: res,
+                text: ref('...'),
                 type: undefined,
                 status: undefined
             }
@@ -80,25 +120,13 @@ export class Chat {
     private async initInstance() {
 
         try {
-            this.pushMessage({
-                    author: 'Michael bot',
-                    AuthorImage: '🤖',
-                    text: 'Iniciando...⏳',
-                    type: undefined,
-                    status: undefined
-                }
-            );
-            this.instance = await Http.get(APIS.NEW)
-            this.pushMessage({
-                author: 'Michael bot',
-                AuthorImage: '🤖',
-                text: 'Hola!',
-                type: undefined,
-                status: undefined
-            })
 
+            this.instance = await Http.get(APIS.NEW)
+
+            return true
         } catch (e) {
-            return this.getErrorMessage()
+            return false
+
         }
     }
 
@@ -106,12 +134,23 @@ export class Chat {
         return {
             author: 'Michael bot',
             AuthorImage: '🤖',
-            text: '...',
+            text: ref('...'),
             type: 'Error',
             status: '🖥️💥'
         }
     }
-    private pushMessage(message:Message){
+
+    private buildBotMessage(text: string): Message {
+        return {
+            author: 'Michael bot',
+            AuthorImage: '🤖',
+            text: ref(text),
+            type: undefined,
+            status: undefined
+        }
+    }
+
+    private pushMessage(message: Message) {
         this.messages.push(message);
         this.listener?.onNewMessage(message)
     }

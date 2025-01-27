@@ -23,7 +23,9 @@ const onEnter = () => {
   if (prevMessage && prevMessage.author === 'You') {
     return;
   }
-  chat.send(msg.value).then(value => {
+
+
+  chat.send(text).then(value => {
     msg.value = ''
 
   })
@@ -31,7 +33,7 @@ const onEnter = () => {
 }
 
 const scrollToBot = async  () => {
-  await sleep(200)
+  await sleep(500)
   document.querySelector('#last')?.scrollIntoView({
     behavior: 'smooth'
   });
