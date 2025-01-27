@@ -56,10 +56,21 @@ export abstract class Http{
                 const {done, value} = await reader.read();
                 if (done)  return  ;
                 if(value){
-                    const data = decoder.decode(value)
+                    const chunk = decoder.decode(value);
+                    const messages = chunk.split('\n\n');
+
+                    for (const message of messages) {
+                        if (message.trim() === '') continue;
+
+                        const jsonStr = message.replace('data: ', '');
+                        const json :{answer?: string, error?:string}  = JSON.parse(jsonStr);
+                        yield json;
+
+                    }
+                    /*const data = decoder.decode(value)
                     const json:{answer?: string, error?:string} = JSON.parse(data)
 
-                    yield json;
+                    yield json;*/
                 }
             } catch (error) {
                 reader.cancel();
