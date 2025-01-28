@@ -74,13 +74,10 @@ export class Chat {
             }
 
         })
-
-        //const messageRes = await this.sendMessage(text);
         currentMessage.status = '✅'
         await p.catch((err) => {
             nextMessage.text.value = this.getErrorMessage().status ?? '';
         })
-        //this.pushMessage(nextMessage);
     }
 
     lastMessage(): Message | undefined {

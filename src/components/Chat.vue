@@ -4,18 +4,21 @@ import {reactive, ref} from "vue";
 import {Chat, type ChatActions, type Message} from "../models/Chat.ts";
 import {sleep} from "../utils/fns.ts";
 
+const msgInput = ref('')
+
 const obs:ChatActions = {
   onNewMessage:(message:Message)=>{
     scrollToBot()
+    msgInput.value = ''
   }
 }
 const chat = reactive<Chat>(new Chat())
 chat.setListener(obs)
-const msg = ref('')
+
 const isMessagesVisible = ref(false)
 const onEnter = () => {
 
-  const text = msg.value
+  const text = msgInput.value
   if (!text || !text.length || text.length > 70) {
     return
   }
@@ -24,11 +27,7 @@ const onEnter = () => {
     return;
   }
 
-
-  chat.send(text).then(value => {
-    msg.value = ''
-
-  })
+  chat.send(text)
   isMessagesVisible.value = true
 }
 
@@ -52,7 +51,7 @@ const onClose = () => {
     </div>
     <div
         :class="isMessagesVisible? 'block':'hidden'"
-        class="overflow-x-hidden overflow-y-auto max-h-[50vh] scroll-width">
+        class="overflow-x-hidden overflow-y-auto max-h-[50vh] scroll-width pb-2">
       <div class="flex flex-col gap-3.5 ">
         <div v-for="message in chat.messages" class="flex items-start gap-2">
           <div class="w-8 h-8 rounded-full flex items-center justify-center ">
@@ -75,16 +74,16 @@ const onClose = () => {
 
     </div>
 
-    <div class="flex pt-2 gap-3">
+    <div class="flex   gap-3">
       <div class="flex-1">
         <label for="small-input" class="block text-sm font-medium  ">
 
-          <input @keyup.enter="onEnter" autocomplete="off" placeholder="Pregúntame algo" v-model="msg" type="text"
+          <input @keyup.enter="onEnter" autocomplete="off" placeholder="Pregúntame algo" v-model="msgInput" type="text"
                  id="small-input"
-                 class="w-full bg-[--gray-999]  border border-[--gray-50] text-[--gray-50]   p-2  ">
+                 class="w-full bg-[--gray-999]  border border-[--accent-light] text-[--gray-50]   p-2  ">
         </label>
       </div>
-      <button class="  inline-flex items-center px-2" @click="onEnter" type="submit">
+      <button class="  inline-flex items-center " @click="onEnter" type="submit">
         <span>➡️</span>
       </button>
 
