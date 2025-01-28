@@ -13,6 +13,7 @@ export type Message = {
 
 export interface ChatActions {
     onNewMessage: (message: Message) => void;
+    onChangeText: (message: Message) => void;
 }
 
 export class Chat {
@@ -63,6 +64,7 @@ export class Chat {
                     if (data.answer) {
                         const current = nextMessage.text.value
                         nextMessage.text.value = current === startText ? data.answer : (current + data.answer);
+                        this.listener?.onChangeText(nextMessage);
                     }
                     if (data.error) {
                         throw new Error(data.error);
@@ -77,6 +79,7 @@ export class Chat {
         currentMessage.status = '✅'
         await p.catch((err) => {
             nextMessage.text.value = this.getErrorMessage().status ?? '';
+            this.listener?.onChangeText(nextMessage);
         })
     }
 

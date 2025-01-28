@@ -10,7 +10,10 @@ const obs:ChatActions = {
   onNewMessage:(message:Message)=>{
     scrollToBot()
     msgInput.value = ''
-  }
+  },
+  onChangeText:(message:Message)=>{
+    scrollToBot(false)
+  },
 }
 const chat = reactive<Chat>(new Chat())
 chat.setListener(obs)
@@ -31,8 +34,8 @@ const onEnter = () => {
   isMessagesVisible.value = true
 }
 
-const scrollToBot = async  () => {
-  await sleep(500)
+const scrollToBot = async  (doSleep =true) => {
+  doSleep && (await sleep(500))
   document.querySelector('#last')?.scrollIntoView({
     behavior: 'smooth'
   });
