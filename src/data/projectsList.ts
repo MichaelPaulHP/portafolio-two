@@ -3,34 +3,61 @@ import type {Project} from "../models/Project.ts";
 const pathImage = "/projectImages";
 
 
-export const yourProjectList: Project[] = [    {
-    title:'Automatización CI/CD GitLab',
-    tools: [
-        'CI/CD',
-        'GitLab',
-        'Runner',
-        'Pipeline',
-        'Shell',
-        'Microsoft Power Automate',
-        'Microsoft Teams',
-        'Jira Automation',
-        'Jira version',
-    ],
-    repositories: [ ],
-    descriptions: [
-        'En nuestro trabajo diario con Teams, GitLab y Jira, teníamos que actualizar issues y notificar al equipo sobre nuevas versiones manualmente. La naturaleza repetitiva de estas tareas me motivó a crear esta automatización.',
-        'El proyecto se compone de tres elementos principales:',
-        '<b>1. GitLab Runner:</b> Desarrollé scripts reutilizables que funcionan como comandos, permitiendo que cualquier proyecto del grupo los pueda usar fácilmente en sus pipelines.',
-        `<b>2. Automatizaciones de Jira:</b> A partir de webhooks que automáticamente modifican tickets y crean versiones según las acciones realizadas.`,
-        '<b>3. Microsoft Power Automate:</b> Configuré webhooks que envían mensajes automáticamente a los chats correspondientes del equipo.',
-        'Este proyecto logró mejorar significativamente la productividad del equipo y eliminando tareas manuales repetitivas.'
-    ],
-    imagesSrc:[pathImage + "/noimage.png"],
-    icon: undefined,
-    infoOnTooltip: 'Proyecto desarrollado en Bantotal Bpeople.',
+export const yourProjectList: Project[] = [
+    {
+        title: 'Automatización CI/CD GitLab',
+        tools: [
+            'CI/CD',
+            'GitLab',
+            'Runner',
+            'Pipeline',
+            'Shell',
+            'Microsoft Power Automate',
+            'Microsoft Teams',
+            'Jira Automation',
+            'Jira version',
+        ],
+        repositories: [],
+        descriptions: [
+            'En nuestro trabajo diario con Teams, GitLab y Jira, teníamos que actualizar tickets y notificar al equipo sobre nuevas versiones manualmente. La naturaleza repetitiva de estas tareas me motivó a crear esta automatización.',
+            'El proyecto se compone de tres elementos principales:',
+            '<b>1. GitLab Runner:</b> Desarrollé scripts reutilizables que funcionan como comandos, permitiendo que cualquier proyecto del grupo los pueda usar fácilmente en sus pipelines.',
+            `<b>2. Automatizaciones de Jira:</b> A partir de webhooks que automáticamente modifican tickets y crean versiones según las acciones realizadas.`,
+            '<b>3. Microsoft Power Automate:</b> Configuré webhooks que envían mensajes automáticamente a los chats correspondientes del equipo.',
+            'Este proyecto logró mejorar significativamente la productividad del equipo y eliminando tareas manuales repetitivas.'
+        ],
+        imagesSrc: [pathImage + "/cicdutils/cicd.jpeg"],
+        icon: undefined,
+        infoOnTooltip: 'Proyecto desarrollado en Bantotal Bpeople.',
     },
     {
-        title:'RAG Application',
+        title: 'Créditos Inmobiliarios',
+        tools: [
+            'FrontEnd',
+            'Angular',
+            'Typed Forms',
+            'TypeScript',
+            'CI/CD',
+            'Jira Automation',
+            'Jira version',
+            'En Bpeople-Bantotal'
+        ],
+        repositories: [],
+        descriptions: [
+            'Se destaca por su complejidad en la gestión de múltiples perfiles de usuario, cada uno con responsabilidades específicas y necesidades particulares en el flujo de trabajo.',
+            'Como líder del equipo frontend de 4 desarrolladores, implementamos una arquitectura modular robusta que nos permitió:',
+            '- Diseñar componentes y módulos independientes, facilitando el desarrollo paralelo y reduciendo dependencias entre compañeros',
+            '- Implementar formularios extensible mediante  "herencia" , permitiendo adaptar formularios base según los requerimientos específicos de cada perfil',
+            '- Maximizar la reutilización de componentes mientras manteníamos la independencia en el desarrollo',
+            'Complementamos el desarrollo con automatizaciones clave, incluyendo la implementación de CI/CD Utils',
+            'Este fue mi último proyecto en BPeople, donde demostré capacidades de liderazgo técnico y arquitectura de software.',
+        ],
+        imagesSrc: [pathImage + "/mc/micasa_login.jpeg"],
+        icon: undefined,
+        infoOnTooltip: 'Proyecto desarrollado en Bantotal Bpeople.',
+    },
+    {
+        title: 'RAG Application',
         tools: [
             'Langchain',
             'OpenAI API',
@@ -42,8 +69,8 @@ export const yourProjectList: Project[] = [    {
             'FastAPI',
             'Google Colab'
         ],
-        repositories:[ ],
-        descriptions:[
+        repositories: [],
+        descriptions: [
             'Tenía que hacer algo con AI, coincidí con RAG( Retrieval-augmented generation) y Langchain.',
             'Para poner en practica lo que investigue,  he decidió  hacer un ChatBot para mi portafolio.',
             'He decido dar información que hay en mi portafolio como contexto a un modelo LLM.',
@@ -53,29 +80,29 @@ export const yourProjectList: Project[] = [    {
             'La API esta deployado en Cloud Run.',
             'La imagen es de un curso de MongoDB Atlas.'
         ],
-        imagesSrc:[pathImage + "/rag/image3.png"],
+        imagesSrc: [pathImage + "/rag/image3.png"],
         icon: undefined,
         infoOnTooltip: undefined,
     },
     {
-      title:'this',
-      tools:[
-          'Astro',
-          'Vue 3',
-          'Vercel static web hosting',
-          'Vercel analytics',
-      ],
-        repositories:[{
-          name:'GitHub',
-           src:'https://github.com/MichaelPaulHP/portafolio-two'
+        title: 'this',
+        tools: [
+            'Astro',
+            'Vue 3',
+            'Vercel static web hosting',
+            'Vercel analytics',
+        ],
+        repositories: [{
+            name: 'GitHub',
+            src: 'https://github.com/MichaelPaulHP/portafolio-two'
         }],
-        descriptions:[
+        descriptions: [
             'He desarrollado una aplicación web para exponer mis datos personales, información profesional y proyectos',
             'El objetivo es aprender Astro y construir una marca personal.',
             'Elegí Astro para optimizar la velocidad de carga y mejorar la visibilidad en los motores de búsqueda.',
             'Aproveche las herramientas de Vercel, como el hosting para sitios web estáticos y análisis de datos'
         ],
-        imagesSrc:[ ],
+        imagesSrc: [],
         icon: undefined,
         infoOnTooltip: undefined,
     },
@@ -112,7 +139,7 @@ export const yourProjectList: Project[] = [    {
 
         ],
         video: undefined,
-        infoOnTooltip:'Proyecto desarrollado en Bantotal, con una interfaz diseñada por el equipo de diseño de la empresa.'
+        infoOnTooltip: 'Proyecto desarrollado en Bantotal, con una interfaz diseñada por el equipo de diseño de la empresa.'
     },
     {
         title: 'Crédito Vehicular',
@@ -143,7 +170,7 @@ export const yourProjectList: Project[] = [    {
             'Me di cuenta que la mejor manera de representar incertidumbre de algo, es definirlo como T |  null | undefined.',
         ],
         video: undefined,
-        infoOnTooltip:'Proyecto desarrollado en Bantotal, con una interfaz diseñada por el equipo de diseño de la empresa.'
+        infoOnTooltip: 'Proyecto desarrollado en Bantotal, con una interfaz diseñada por el equipo de diseño de la empresa.'
     },
     {
         title: 'OB SAAS',
@@ -178,7 +205,7 @@ export const yourProjectList: Project[] = [    {
 
         ],
         video: undefined,
-        infoOnTooltip:'Proyecto desarrollado en Bantotal, con una interfaz diseñada por el equipo de diseño de la empresa.'
+        infoOnTooltip: 'Proyecto desarrollado en Bantotal, con una interfaz diseñada por el equipo de diseño de la empresa.'
     },
     {
         title: 'Primer Proyecto con Angular',
@@ -212,7 +239,7 @@ export const yourProjectList: Project[] = [    {
             'Retoma, posibidad de ir a la ultima etapa completada.'
         ],
         video: undefined,
-        infoOnTooltip:'Proyecto desarrollado en Bantotal, con una interfaz diseñada por el equipo de diseño de la empresa.'
+        infoOnTooltip: 'Proyecto desarrollado en Bantotal, con una interfaz diseñada por el equipo de diseño de la empresa.'
     },
 
     {

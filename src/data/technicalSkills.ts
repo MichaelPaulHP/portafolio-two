@@ -16,7 +16,11 @@ export const technicalSkills: ReadonlyArray<TechnicalSkill> = [
         name: 'AI',
         info: 'Aprendiendo',
         options:[
-            'Langgraph',
+            'Agents - Langgraph',
+            'Machine learning',
+            'Deep learning',
+            'Agents',
+            'RAG'
         ],
     },
     {
